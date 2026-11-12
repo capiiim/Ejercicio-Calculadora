@@ -4,6 +4,8 @@ Calculadora sencilla en Java Swing con **sumar, restar, multiplicar y limpiar**.
 
 El total comienza en **1** y cada operacion usa el total acumulado. **Limpiar** lo regresa a 1.
 
+# **[Ver video explicativo](https://youtu.be/p8Z2PbJRp-Y)**
+
 ## Ejecutar
 
 ```bash
