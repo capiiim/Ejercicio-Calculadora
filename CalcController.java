@@ -7,12 +7,32 @@ public class CalcController {
         this.vista = vista;
 
         vista.addMultiplyListener(e -> multiplicar());
+        vista.addAddListener(e -> sumar());
+        vista.addSubtractListener(e -> restar());
         vista.addClearListener(e -> limpiar());
     }
 
     private void multiplicar() {
         try {
             modelo.multiplyBy(vista.getUserInput());
+            vista.setTotal(modelo.getValue());
+        } catch (NumberFormatException e) {
+            vista.showError("Ingresa un numero valido. Usa punto para los decimales.");
+        }
+    }
+
+    private void sumar() {
+        try {
+            modelo.addBy(vista.getUserInput());
+            vista.setTotal(modelo.getValue());
+        } catch (NumberFormatException e) {
+            vista.showError("Ingresa un numero valido. Usa punto para los decimales.");
+        }
+    }
+
+    private void restar() {
+        try {
+            modelo.subtractBy(vista.getUserInput());
             vista.setTotal(modelo.getValue());
         } catch (NumberFormatException e) {
             vista.showError("Ingresa un numero valido. Usa punto para los decimales.");

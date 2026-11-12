@@ -6,18 +6,25 @@ public class CalcView extends JFrame {
     private final JTextField entrada = new JTextField("1", 12);
     private final JTextField resultado = new JTextField("1", 27);
     private final JButton multiplicar = new JButton("Multiplicar");
+    private final JButton sumar = new JButton("Sumar");
+    private final JButton restar = new JButton("Restar");
     private final JButton limpiar = new JButton("Limpiar");
 
     public CalcView() {
         super("Calculadora MVC");
+
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 12));
         resultado.setEditable(false);
+
         panel.add(new JLabel("Numero:"));
         panel.add(entrada);
         panel.add(multiplicar);
+        panel.add(sumar);
+        panel.add(restar);
         panel.add(new JLabel("Total:"));
         panel.add(resultado);
         panel.add(limpiar);
+
         add(panel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
@@ -43,6 +50,14 @@ public class CalcView extends JFrame {
 
     public void addMultiplyListener(ActionListener listener) {
         multiplicar.addActionListener(listener);
+    }
+
+    public void addAddListener(ActionListener listener) {
+        sumar.addActionListener(listener);
+    }
+
+    public void addSubtractListener(ActionListener listener) {
+        restar.addActionListener(listener);
     }
 
     public void addClearListener(ActionListener listener) {
